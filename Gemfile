@@ -69,3 +69,4 @@ end
 gem "mysql2"
 gem "sassc-rails"
 gem "bootstrap"
+gem "byebug"
