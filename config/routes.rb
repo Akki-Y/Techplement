@@ -18,5 +18,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :resetpasswords, only: [:new, :create, :edit, :update]
+  patch '/reset_password/:token', to: 'resetpasswords#update', as: 'update_resetpassword'
+
   get 'homepage', to: 'homepage#index', as: 'homepage'
 end
