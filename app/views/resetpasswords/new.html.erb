@@ -1,8 +1,12 @@
-<h1>Reset Password</h1>
+<h1 class="mb-4">Reset Password</h1>
 
 <%= form_with url: resetpasswords_path, local: true do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <div class="mb-3">
+    <%= f.label :email, class: "form-label" %>
+    <%= f.email_field :email, class: "form-control", required: true %>
+  </div>
 
-  <%= f.submit 'Reset password'%>
+  <div class="mb-3">
+    <%= f.submit 'Reset Password', class: "btn btn-primary" %>
+  </div>
 <%end%>

@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  # root "users#new"
-
   root "sessions#new"
   get "login", to: "sessions#new", as: "login"
   post "login", to: "sessions#create"
@@ -20,7 +18,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :resetpasswords, only: [:new, :create, :edit, :update]
-  patch '/reset_password/:token', to: 'resetpasswords#update', as: 'update_resetpassword'
+  patch '/reset_password/:id', to: 'resetpasswords#update', as: 'update_resetpassword'
 
   get 'homepage', to: 'homepage#index', as: 'homepage'
 end

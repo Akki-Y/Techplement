@@ -1,6 +1,9 @@
-<h1>Homepage</h1>
-<% if @user %>
-  Logged in as: <%= @user.email %>
+<h1 class="mb-4">Homepage</h1>
+<p class="mb-4">Welcome to your dashboard! Here you can view and manage your account settings, access various features, and stay updated with the latest information.</p>
 
-  <%= button_to "Logout", logout_path, method: :delete%>
+<% if @user %>
+  <div class="mb-4">
+    <p class="fw-bold">Logged in as: <%= @user.email %></p>
+    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+  </div>
 <% end %>
