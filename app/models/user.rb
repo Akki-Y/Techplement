@@ -8,7 +8,7 @@ class User < ApplicationRecord
   def generate_reset_password_token!
     self.reset_password_token = SecureRandom.hex(10)
     self.reset_password_sent_at = Time.now.utc
-    save!(validate: false)  # Skips validations
+    save!(validate: false)  
   end
   
   def password_token_valid?

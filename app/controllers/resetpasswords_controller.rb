@@ -29,11 +29,11 @@ class ResetpasswordsController < ApplicationController
         flash[:success] = "Password successfully updated. Please log in."
         redirect_to root_path
       else
-        flash[:danger] = "Password and confirmation do not match or password is too short."
+        flash[:danger] = "Password incorrect"
         render :edit
       end
     else
-      flash[:danger] = "Passwords should match"
+      flash[:danger] = "Password mismatch. Enter you email to update password."
       redirect_to new_resetpassword_path
     end
   end
